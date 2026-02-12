@@ -1,0 +1,361 @@
+/* =========================
+   Global Reset
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Animated Gradient Background
+========================= */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================
+   App Layout (Full Page)
+========================= */
+
+.App {
+  font-family: "Inter", "Arial", sans-serif;
+  min-height: 100vh;
+  width: 208%;
+  padding: 60px 6%;
+  color: #1e1e1e;
+
+  background: linear-gradient(-45deg, #f8f9fa, #e3f2fd, #fce4ec, #f3e5f5);
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+
+  transition: color 0.4s ease;
+}
+
+/* =========================
+   Dark Mode
+========================= */
+
+.App.dark {
+  color: #f1f1f1;
+
+  background: linear-gradient(-45deg, #121212, #1a1a2e, #16213e, #1f1f1f);
+  background-size: 400% 400%;
+  animation: gradientMove 22s ease infinite;
+}
+
+/* =========================
+   Header
+========================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 5px #7b2ff7,
+    0 0 10px #7b2ff7,
+    0 0 20px #00c6ff,
+    0 0 40px #00c6ff;
+}
+
+.toggle-btn {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* =========================
+   Description
+========================= */
+
+.description {
+  max-width: 900px;
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 70px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.App.dark .description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================
+   Project Grid
+========================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+/* =========================
+   Project Card (Glass Style)
+========================= */
+
+.project-card {
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.App.dark .project-card {
+  background: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.App.dark .project-card:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.project-card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   Tech Stack
+========================= */
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.tech-badge {
+  background: #007bff;
+  color: white;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.tech-badge:hover {
+  transform: scale(1.1);
+}
+
+.App.dark .tech-badge {
+  background: #1a73e8;
+}
+
+/* =========================
+   Links / Buttons
+========================= */
+
+.links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  background: #007bff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  background: #0056b3;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
+}
+
+.App.dark .links a {
+  background: #1a73e8;
+}
+
+.App.dark .links a:hover {
+  background: #1558b0;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+  .App {
+    padding: 40px 6%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .project-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .description {
+    font-size: 16px;
+  }
+
+  .links a {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* =========================
+   Floating Background Blobs
+========================= */
+.App > *:not(.blobs) {
+  position: relative;
+  z-index: 1;
+}
+
+.blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: floatBlob 20s ease-in-out infinite alternate;
+}
+
+/* Individual blob styles */
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: #ff6ec7;
+  top: 10%;
+  left: 5%;
+}
+
+.blob2 {
+  width: 500px;
+  height: 500px;
+  background: #00c6ff;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.blob3 {
+  width: 350px;
+  height: 350px;
+  background: #7b2ff7;
+  top: 40%;
+  right: 30%;
+  animation-delay: 10s;
+}
+
+/* Floating animation */
+
+@keyframes floatBlob {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px) scale(1.1);
+  }
+  100% {
+    transform: translateY(20px) translateX(-20px) scale(0.95);
+  }
+}
+.App.dark .blob1 {
+  background: #ff3cac;
+}
+
+.App.dark .blob2 {
+  background: #00dbde;
+}
+
+.App.dark .blob3 {
+  background: #fc00ff;
+}
+/* =========================
+   Project Images
+========================= */
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
