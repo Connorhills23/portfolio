@@ -72,6 +72,15 @@ const projects = [
     live: "https://connorhills23.github.io/spiderman-timer/",
     image: "/images/spiderman.png",
   },
+  {
+    name: "Database-Driven-Full-Stack-React-&-Express-App",
+    description: "Database Driven Full Stack React & Express App .",
+    tech: ["JavaScript", "HTML", "CSS", "SQL", "JSX"],
+    github:
+      "https://github.com/Connorhills23/Build-a-Database-Driven-Full-Stack-React-Express-App",
+    live: "https://build-a-database-driven-full-stack-react-7iei.onrender.com/",
+    image: "/images/database.png",
+  },
 ];
 
 function App() {
