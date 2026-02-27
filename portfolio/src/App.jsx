@@ -81,6 +81,14 @@ const projects = [
     live: "https://build-a-database-driven-full-stack-react-7iei.onrender.com/",
     image: "/images/database.png",
   },
+  {
+    name: "3D-AUDIO-VISUALIZER",
+    description: "3D AUDIO WORKING WITH WEBSOCKETS .",
+    tech: ["JavaScript", "HTML", "CSS", "WEBSOCKETS", "THREE.JS"],
+    github: "https://github.com/Connorhills23/3d-music-visualizer-03",
+    live: "https://connorhills23.github.io/3d-music-visualizer-03/",
+    image: "/images/3d-audio.png",
+  },
 ];
 
 function App() {
